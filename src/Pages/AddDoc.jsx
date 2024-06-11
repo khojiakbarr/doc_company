@@ -1,23 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 export default function AddDoc() {
   return (
-    <div>
-      <nav>
-        <ul >
-          <Link>
-            <li>AddDoctor</li>
-          </Link>
-          <Link>
-            <li>AddDoctor</li>
-          </Link>
-          <Link>
-            <li>AddDoctor</li>
-          </Link>
-        </ul>
-      </nav>
-      <h1>Hello Doc</h1>
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <h1>Hello Doc</h1>
+      </div>
+    </>
   );
 }
