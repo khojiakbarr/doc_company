@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const DoctorsSlice = createSlice({
   name: "doctors",
   initialState: {
-    doctors: [],
+    doctors: [{ id: 0, name: "Zerikkan Doc", type: "glaznoy" }],
   },
 
   reducers: {

@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import DoctorsSlice from "./DoctorsSlice";
 
 const ClientsSlice = createSlice({
-  name: "client",
+  name: "clients",
   initialState: {
-    cleints: [],
+    cleints: [{ id: 0, name: "Kasal", type: "Qoli singan" }],
   },
   reducers: {
     addClient(state, action) {
@@ -23,7 +22,7 @@ const ClientsSlice = createSlice({
         }
       });
     },
-    
+
     deleteClient(state, action) {
       state.cleints = state.cleints.filter(
         (client) => client.id !== action.payload
@@ -40,5 +39,5 @@ const ClientsSlice = createSlice({
     },
   },
 });
-export const { addClient } = ClientsSlice.actions;
-export default DoctorsSlice.reducers;
+export const { addClient, editClient, deleteClient } = ClientsSlice.actions;
+export default ClientsSlice.reducer;
