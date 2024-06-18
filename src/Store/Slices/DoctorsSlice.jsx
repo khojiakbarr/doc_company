@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
 
 const DoctorsSlice = createSlice({
   name: "doctors",
@@ -8,10 +9,7 @@ const DoctorsSlice = createSlice({
 
   reducers: {
     addDoc(state, action) {
-      state.doctors = [
-        ...state.doctors,
-        { ...action.payload, id: state.doctors.length },
-      ];
+      state.doctors = [...state.doctors, { ...action.payload, id: uuid() }];
     },
     editDoc(state, action) {
       state.doctors = state.doctors.map((doc) =>

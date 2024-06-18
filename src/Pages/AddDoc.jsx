@@ -8,7 +8,7 @@ export default function AddDoc() {
       <Navbar />
       <h1 className="text-center text-[30px]">Add Doc</h1>
       <div className="container mx-auto">
-        <FormControl type={"Sick"} />
+        <FormControl type={"Doc"} />
       </div>
     </>
   );

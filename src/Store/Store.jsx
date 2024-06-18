@@ -4,7 +4,7 @@ import ClientsSlice from "./Slices/ClientsSlice";
 
 const store = configureStore({
   reducer: {
-    docters: DoctorsSlice,
+    doctors: DoctorsSlice,
     clients: ClientsSlice,
   },
 });

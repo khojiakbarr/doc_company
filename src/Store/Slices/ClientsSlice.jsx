@@ -1,22 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
 
 const ClientsSlice = createSlice({
   name: "clients",
   initialState: {
-    cleints: [{ id: 0, name: "Kasal", type: "Qoli singan" }],
+    clients: [{ id: uuid(), name: "Kasal", doctorId: 0, type: "Qoli singan" }],
   },
   reducers: {
     addClient(state, action) {
-      state.cleints = [
-        ...state,
-        { id: state.cleints.length, client: action.payload, isCompadet: false },
+      const newClients = [
+        ...state.clients,
+        {
+          ...action.payload.data,
+          id: uuid(),
+          isCompadet: false,
+        },
       ];
+
+      return newClients;
     },
 
     editClient(state, action) {
-      state.cleints = state.cleints.map((client) => {
+      state.clients = state.clients.map((client) => {
         if (client.id === action.payload.id) {
-          return action.payload;
+          return action.payload.data;
         } else {
           return client;
         }
@@ -24,13 +31,13 @@ const ClientsSlice = createSlice({
     },
 
     deleteClient(state, action) {
-      state.cleints = state.cleints.filter(
+      state.clients = state.clients.filter(
         (client) => client.id !== action.payload
       );
     },
 
     isCompadet(state, action) {
-      state.cleints = state.cleints.map((client) => {
+      state.clients = state.clients.map((client) => {
         if (client.id === action.payload.id) {
           client.isCompadet = action.payload.isCompadet;
         }
