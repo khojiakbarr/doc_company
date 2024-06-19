@@ -36,12 +36,16 @@ export default function FormControl({ type }) {
           placeholder="Name Doctor"
           type="text"
           {...register("name")}
+          autoComplete="off"
+          required
         />
         <input
           className="p-[5px] border-[1px] border-blackrounded-[15px] rounded-[5px]"
           placeholder="Type of Doctor"
           type="text"
           {...register("type")}
+          autoComplete="off"
+          required
         />
         <button className=" bg-orange-100 text-[20px] font-bold py-[7px] px-[5px] border-[1px] border-black rounded-[15px]">
           Submit
@@ -59,12 +63,16 @@ export default function FormControl({ type }) {
           type="text"
           className="p-[5px] border-[1px] border-blackrounded-[15px] rounded-[5px]"
           {...register("name")}
+          autoComplete="off"
+          required
         />
         <input
           placeholder="Sick type "
           type="text"
           className="p-[5px] border-[1px] border-blackrounded-[15px] rounded-[5px]"
           {...register("type")}
+          autoComplete="off"
+          required
         />
         <select className="p-[5px]" {...register("doctorId")}>
           {doctors.map((doc) => {

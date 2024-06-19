@@ -11,19 +11,20 @@ const ClientsSlice = createSlice({
       const newClients = [
         ...state.clients,
         {
-          ...action.payload.data,
+          ...action.payload,
           id: uuid(),
           isCompadet: false,
         },
       ];
 
-      return newClients;
+      state.clients = newClients;
     },
 
     editClient(state, action) {
       state.clients = state.clients.map((client) => {
-        if (client.id === action.payload.id) {
-          return action.payload.data;
+        if (client.id == action.payload.id) {
+          console.log(action.payload.data);
+          return { ...client, ...action.payload.data };
         } else {
           return client;
         }

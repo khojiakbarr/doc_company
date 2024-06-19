@@ -13,7 +13,7 @@ const DoctorsSlice = createSlice({
     },
     editDoc(state, action) {
       state.doctors = state.doctors.map((doc) =>
-        doc.id === action.payload.id ? action.payload : doc
+        doc.id === action.payload.id ? { ...doc, ...action.payload.data } : doc
       );
     },
     deleteDoc(state, action) {
