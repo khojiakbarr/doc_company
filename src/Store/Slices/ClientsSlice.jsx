@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 const ClientsSlice = createSlice({
   name: "clients",
   initialState: {
-    clients: [{ id: uuid(), name: "Kasal", doctorId: 0, type: "Qoli singan" }],
+    clients: [],
   },
   reducers: {
     addClient(state, action) {
